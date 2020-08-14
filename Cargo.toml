@@ -1,0 +1,18 @@
+[package]
+name = "rust_clone_git_profile"
+version = "0.1.0"
+authors = ["afetzer <aayla.fetzer@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "clonegitprofile"
+path = "src/main.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version="*", features = ["blocking"] }
+json = "*"
+clap = { version = "*", features = ["yaml"] }
+fstrings = "*"
+git2 = "*"
