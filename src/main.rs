@@ -5,6 +5,7 @@ use clap::{App, load_yaml};
 use json;
 use git2::Repository;
 use std::process::exit;
+use std::path::Path;
 
 fn main() {
     // Set up Clap
@@ -72,13 +73,18 @@ fn main() {
                 repo_url = parsed[i]["http_url_to_repo"].as_str().unwrap();
             }
             let repo_name = parsed[i]["name"].as_str().unwrap();
-
+            let clone_path = format!("{}/{}", clone_path, repo_name);
             // Clone the repository
             println!("Cloning {}", repo_name);
-            let repo = match Repository::clone(repo_url, format!("{}/{}", clone_path, repo_name)) {
-                Ok(repo) => repo,
-                Err(E) => panic!("Failed to clone: {}", E),
-            };
+
+            if !Path::new(&clone_path).exists() {
+                let repo = match Repository::clone(repo_url, &clone_path) {
+                    Ok(repo) => repo,
+                    Err(E) => panic!("Failed to clone: {}", E),
+                };
+            } else {
+                println!("The folder for {} already exists, moving on to next repository", repo_name);
+            }
         }
         // Iterate to next page
         page += 1;
