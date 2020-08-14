@@ -1,5 +1,4 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg?style=flat-square)](https://opensource.org/licenses/)
-![Travis (.org)](https://img.shields.io/travis/aaylafetzer/RustCloneGitProfile?style=flat-square)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/aaylafetzer/RustCloneGitProfile?style=flat-square)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/aaylafetzer/RustCloneGitProfile?style=flat-square)
 
