@@ -30,4 +30,4 @@ ARGS:
 ```
 ### Examples
 To clone my GitHub page to ``./Code/``, run:
-``./clonegitprofile github aaylafetzer -p ./Code``
+``./clonegitprofile -p ./Code github aaylafetzer``
