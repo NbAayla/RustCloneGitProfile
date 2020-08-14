@@ -15,3 +15,9 @@ args:
       help: username of the account to clone
       required: true
       index: 2
+  - path:
+      short: p
+      long: path
+      value_name: OUTPUT
+      help: path to clone repositories into
+      required: false
