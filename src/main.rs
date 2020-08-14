@@ -83,5 +83,4 @@ fn main() {
         // Iterate to next page
         page += 1;
     }
-    println!("Escaped!");
 }
