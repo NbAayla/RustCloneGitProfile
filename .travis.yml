@@ -3,7 +3,7 @@ rust:
   - stable
   - beta
   - nightly
-job:
+jobs:
   allow_failures:
     - rust: nightly
   fast_finish: true

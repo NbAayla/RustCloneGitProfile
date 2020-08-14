@@ -4,7 +4,6 @@ extern crate fstrings;
 use clap::{App, load_yaml};
 use json;
 use git2::Repository;
-use std::process::exit;
 use std::path::Path;
 
 fn main() {
@@ -20,8 +19,6 @@ fn main() {
     let mut clone_path = "./";
     if matches.is_present("path") {
         clone_path = matches.value_of("path").unwrap();
-    } else {
-        exit(0);
     }
 
     // Validate inputs
@@ -78,9 +75,9 @@ fn main() {
             println!("Cloning {}", repo_name);
 
             if !Path::new(&clone_path).exists() {
-                let repo = match Repository::clone(repo_url, &clone_path) {
+                match Repository::clone(repo_url, &clone_path) {
                     Ok(repo) => repo,
-                    Err(E) => panic!("Failed to clone: {}", E),
+                    Err(e) => panic!("Failed to clone: {}", e),
                 };
             } else {
                 println!("The folder for {} already exists, moving on to next repository", repo_name);
