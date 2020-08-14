@@ -1,5 +1,7 @@
-#RustCloneGitProfile
+# RustCloneGitProfile
 A program to clone all public repositories on a GitHub or GitLab profile.
+
+This is a Rust rewrite of [PyCloneGitProfile](https://github.com/aaylafetzer/PyCloneGitProfile).
 ## Usage
 This information can also be accessed with ``./clonegitprofile -h``
 ```
