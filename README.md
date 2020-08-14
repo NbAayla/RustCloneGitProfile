@@ -1,6 +1,7 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 [![Build Status](https://travis-ci.org/aaylafetzer/RustCloneGitProfile.svg?branch=master)](https://travis-ci.org/aaylafetzer/RustCloneGitProfile)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/aaylafetzer/RustCloneGitProfile)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/aaylafetzer/RustCloneGitProfile)
 
 # RustCloneGitProfile
 A program to clone all public repositories on a GitHub or GitLab profile.
