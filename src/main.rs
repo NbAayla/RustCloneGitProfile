@@ -17,8 +17,10 @@ fn main() {
             // Get independent subcommand matches
             if let Some(matches) = matches.subcommand_matches("github") {
                 println!("Cloning GitHub profile of {}", matches.value_of("USERNAME").unwrap());
+                // Clone the profile
                 clone::github(matches.value_of("USERNAME").unwrap(),
-                              matches.value_of("path").unwrap()
+                              matches.value_of("path").unwrap(),
+                              matches.values_of("languages").unwrap()  // clap::Values
                 );
             }
         }

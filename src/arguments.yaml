@@ -14,6 +14,11 @@ subcommands:
             short: p
             takes_value: true
             default_value: "./"
+        - langauges:
+            help:
+            short: l
+            takes_value: true
+            multiple: true
   - gitlab:
       about: Clone a GitLab profile
       args:

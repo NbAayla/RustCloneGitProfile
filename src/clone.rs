@@ -28,7 +28,7 @@ fn clone_repository(url: &str, path: &str) {
     }
 }
 
-pub(crate) fn github(username: &str, path_argument: &str) {
+pub(crate) fn github(username: &str, path_argument: &str, languages: clap::Values) {
     let mut page:i8 = 1;
     let client = reqwest_client();
     // Main loop
@@ -52,6 +52,10 @@ pub(crate) fn github(username: &str, path_argument: &str) {
         } else {
             // Data was returned by the API. Iterate through it.
             for i in 0..parsed.len() {
+
+                // TODO: I need an if statement here to test if parsed[i][language] is one of the
+                // languages specified in the arguments (the iterator passed as "languages")
+
                 let repo_url = parsed[i]["clone_url"].as_str().unwrap();
                 let repo_name = parsed[i]["name"].as_str().unwrap();
                 let clone_path = &*format!("{}/{}", path_argument, repo_name);
