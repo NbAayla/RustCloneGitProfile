@@ -1,23 +1,23 @@
 name: CloneGitProfile
-version: "1.0"
+version: "2.0"
 author: Aayla Fetzer
 about: Clones the public repositories of a Github or GitLab profile into a directory
-args:
-  - verbose:
-      short: v
-      long: verbose
-      help: increase the program verbosity
-  - PLATFORM:
-      help: gitlab or github
-      required: true
-      index: 1
-  - USERNAME:
-      help: username of the account to clone
-      required: true
-      index: 2
-  - path:
-      short: p
-      long: path
-      value_name: OUTPUT
-      help: path to clone repositories into
-      required: false
+subcommands:
+  - github:
+      about: Clone a GitHub profile
+      args:
+        - USERNAME:
+            help: Username of the account to clone
+            required: true
+            index: 1
+        - path:
+            short: p
+            takes_value: true
+            default_value: "./"
+  - gitlab:
+      about: Clone a GitLab profile
+      args:
+        - USERNAME:
+            help: Username of the account to clone
+            required: true
+            index: 1
